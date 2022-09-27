@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            body {
+                font-family: helvetica;
+            }
+            h1 {
+                color: crimson;
+            }
+            em { 
+                font-weight: bold; 
+                font-style: normal; 
+                text-decoration: underline; 
+                font-size: 1.2em; 
+            }
+            li {
+                margin: 20px;
+            }
+            ol { 
+                width: 700px; 
+                position: relative; 
+                left: 50%; 
+                margin-left: -350px;
+            }
+            ol > li > ol > li {
+                margin: 10px;
+            }
+            p { 
+                width: 700px; 
+                position: relative; 
+                left: 50%; 
+                margin-left: -350px;
+            }
+            h1 {
+                text-align:center;
+            }
+            ul > li {
+                margin-top: 0; 
+                margin-bottom: 5px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1></h1>
+
+        <li>
+            1. Write a function to find the sum of the elements inside the array
+        </li>
+
+            <script>
+                console.log("===Q1===");
+
+                function SumOfArray(array){
+                    let sum = 0;
+
+                    for (let i=0; i<array.length; i++) {
+                        sum += array[i];
+                    }
+
+                    return sum;
+                }
+
+                // call the function and give it our array
+                console.log(SumOfArray([1, 2, 4, 5, -5])); // logs 11
+            </script>
+
+        <li>
+            2. Using a function for loop print all even numbers up to n (parameter in function);
+        </li>
+
+            <script>
+                console.log("===Q2===");
+
+
+                function PrintAllEvenNumbersUpToN (n) {
+                    for (let i=1; i<=n/2; i++) {
+                        if (n%2 == 0 ){                        
+                            console.log(2*i);
+                    }
+                }
+            }
+
+                // call the function and give it our array
+                PrintAllEvenNumbersUpToN(30);
+            </script>
+
+
+        <li>
+            3. Write a function take a string as a parameter, Check if a string contains the letter “y”. If yes print "YES" and only one time.
+            For example - "Crayzy" "Yes"
+        </li>
+
+        <script>
+            console.log("===Q3===");
+
+            function IsContain_y(str) {
+                if (str.includes("y")) return "Yes";
+            }
+
+            console.log(IsContain_y("Crazy"));
+        </script>
+
+        <li>
+            4. Write a function to find the factorial of a given number n
+        </li>
+
+        <script>
+            console.log("===Q4===");
+
+            function factorialize(num) {
+                if (num === 0 || num === 1)
+                    return 1;
+                for (let i = num - 1; i >= 1; i--) {
+                    num *= i;
+                }
+                return num;
+            }
+
+            console.log(factorialize(3));
+        </script>
+
+
+        <li>
+            5. Write a function which accepts 4 parameters (different scores of a student for subjects), and
+            then calculate the average of all the score.
+            If the average is more than 90 , then console grade A
+            If the average is between 70 and 90 , then console grade B
+            If the average is between 50-70, then console grade C
+            Other wise console grade F
+        </li>
+
+        <script>
+            console.log("===Q5===");
+
+            function StudentGrade(score1, score2, score3, score4) {
+                let average = (score1 + score2 + score3 + score4) / 4;
+                
+                if ( 90 < average )
+                    console.log("grade A");
+                else if ( 70 < average && average <=90 )
+                    console.log("grade B");
+                else if ( 50 < average && average <=70 )
+                    console.log("grade C");
+                else
+                    console.log("grade F");
+            }
+
+            StudentGrade(90, 100, 91 , 80); 
+        
+        </script>
+
+        <li>
+            6. Write a function which prints the star pattern like that for the given value n
+
+          
+
+        </li>
+
+        <script>
+            console.log("===Q6===");
+
+            function LeftTriangleStar(num) {
+                for(var i=1; i<=num; i++){
+                    console.log("* ".repeat(i));
+                }
+            }
+
+            LeftTriangleStar(6);
+        </script>
+<li>
+    // 7.
+
+// *
+// **
+// ***
+// ****
+// *****
+// ******
+// *******
+// ******
+// *****
+// ****
+// ***
+// **
+// *
+</li>
+<script>
+     console.log("===Q7===");
+
+function LeftTriangleStar(num) {
+    for(var i=1; i<=num; i++){
+        console.log("* ".repeat(i));
+    }
+}
+function LeftReverseTriangleStar(num1) {
+    for(var j=num1; j>=0; j--){
+        console.log("* ".repeat(j));
+    }
+}
+
+LeftTriangleStar(6);
+
+LeftReverseTriangleStar(7);
+
+</script>
+<li>
+// 8. Write a function to reverse a string
+</li>
+<script>
+    console.log("===Q8===");
+    
+    let str ="";
+    function reverseString(str){
+  
+        return str.split("").reverse().join("");
+    }
+
+    console.log(reverseString("apple"));
+
+</script>
+
+    </body>
+</html>
