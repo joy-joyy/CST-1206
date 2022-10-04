@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script>
+        function publishToTable() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const student_id = document.getElementById('student_id').value;
+            const error = document.getElementById('error');
+            error.innerHTML = (!name || !email || !student_id) ? 'Name & Email & Student ID both values are required.' : '';
+            if (name && email && student_id) {
+                const tableElement = document.getElementById('table');
+                const trElement = document.createElement('tr');
+                const tbodyElement = document.createElement('tbody');
+                const nameEle = document.createElement('td');
+                const emailEle = document.createElement('td');
+                const student_idEle = document.createElement('td');
+                nameEle.innerHTML = name;
+                emailEle.innerHTML = email;
+                student_idEle.innerHTML = student_id;
+                trElement.appendChild(nameEle);
+                trElement.appendChild(emailEle);
+                trElement.appendChild(student_idEle);
+                tbodyElement.appendChild(trElement);
+                tableElement.appendChild(tbodyElement);
+            }
+        }
+    </script>
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        div.complete {
+            flex-direction: column;
+       }
+       div.button {
+        justify-content:  flex-end;
+
+       }
+   </style>
+    <div class="complete">
+    <table>
+         <p><label>Name: <input id="name" type="text"></label>  </p>
+         <p><label>Email: <input id="email" type="text"></label></p>
+         <p><label>Student ID: <input id="student_id" type="text"></label></p>
+         <div class = "button">
+
+            <p><button onclick="publishToTable()">submit</button></p>
+         </div>
+
+    </table>
+</div >
+           
+    
+    
+    <span id="error"></span>
+
+    <div id="tables">
+        <table id="table">
+            
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>   Email</th>
+                    <th>   Student ID</th>
+                </tr>
+            </thead>
+        </table>
+      
+    </div>
+</body>
+</html>
