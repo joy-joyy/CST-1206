@@ -6,8 +6,10 @@
             const email = document.getElementById('email').value;
             const student_id = document.getElementById('student_id').value;
             const error = document.getElementById('error');
+            
             error.innerHTML = (!name || !email || !student_id) ? 'Name & Email & Student ID both values are required.' : '';
             if (name && email && student_id) {
+
                 const tableElement = document.getElementById('table');
                 const trElement = document.createElement('tr');
                 const tbodyElement = document.createElement('tbody');
@@ -34,13 +36,31 @@
 </head>
 <body>
     <style>
+        body{
+            
+            background: rgb(238,174,202);
+            background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,201,233,1) 100%);
+        }
         div.complete {
             flex-direction: column;
+            text-align: center;
        }
        div.button {
         justify-content:  flex-end;
 
        }
+       .hello{
+       justify-content: center;
+       }
+
+   
+  table#table {
+    text-align:center; 
+    border: 1px solid black;
+    margin: 80px auto;
+    width:500px;
+  }
+  tr,td {text-align:left;}
    </style>
     <div class="complete">
     <table>
@@ -59,8 +79,8 @@
     
     <span id="error"></span>
 
-    <div id="tables">
-        <table id="table">
+    <div id="hello" >
+        <table id="table" >
             
             <thead>
                 <tr>
