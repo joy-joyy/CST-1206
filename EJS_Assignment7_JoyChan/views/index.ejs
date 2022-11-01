@@ -1,0 +1,81 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/js-datepicker/dist/datepicker.min.css">
+    <title>Document</title>
+
+    <style>
+        h1 {
+            background: red;
+        }
+    </style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <h1>Welcome to Joy App</h1>
+    <h5>Source: index.ejs</h5>
+
+    <form action="/displayresult">
+        Name: <input type="text" id="name" placeholder="Your name"> <br>
+        Email: <input type="email" id="email" placeholder="Your email"> <br>
+        Date: <input type="text" id="reqdate"> <br>
+        Message: <br>
+        <textarea name="text" id="details" cols="30" rows="10" placeholder="Type your message here"></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+
+
+    
+<script> 
+    // TODO
+
+    $('form').on('submit', (e) => {
+        // e.preventDefault();
+
+        const name = $('#name').val().trim();
+        const email = $('#email').val().trim();
+        const reqdate = $('#reqdate').val().trim();
+        const details = $('#details').val().trim();
+
+        const data = {name, email, reqdate, details};
+
+        $.post('/showresult', data, function() {
+            console.log("Server received our data!");
+        });
+
+    });
+
+</script>
+    
+    <!-- <h1>Hi my name is <%- name %> !</h1> -->
+
+
+    <!-- <ul>
+        <% for (let i = 0 ; i < name.length; i++) { %>
+            <li>
+                <%- name[i] %>
+            </li>
+      <%  }
+
+        %>
+    </ul>
+    <%= name %>
+    -->
+    <script src="https://unpkg.com/js-datepicker"></script>
+    <script> 
+        const picker = datepicker("#reqdate", {
+            dateSelected: new Date() // set default today
+            }); 
+    
+    </script>
+
+</body>
+</html>
